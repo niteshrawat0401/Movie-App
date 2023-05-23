@@ -51,7 +51,7 @@ const handleClose = (e) =>{
 }
 
   return (
-        <AppBar>
+        <AppBar position='static'>
                 <StyleToolbar>
                     <Logo src={logoURL} alt="movielogo" />
                     <Box onClick={handleOpen}>

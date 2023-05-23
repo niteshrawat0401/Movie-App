@@ -9,14 +9,13 @@ export const Headersmenu = ({open, handleClose}) => {
   return (
     <Box>
          <Menu
-        // id="fade-menu"
-        // MenuListProps={{
-        //   'aria-labelledby': 'fade-button',
-        // }}
+        id="fade-menu"
+        MenuListProps={{
+          'aria-labelledby': 'fade-button',
+        }}
         anchorEl={open}
         open={openMenu}
         onClose={handleClose}
-        // TransitionComponent={Fade}
       >
         <MenuItem onClick={handleClose}>Popular</MenuItem>
         <MenuItem onClick={handleClose}>Top Rated</MenuItem>
