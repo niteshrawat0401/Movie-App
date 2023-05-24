@@ -1,7 +1,7 @@
-import { Box, styled } from '@mui/material'
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import {Typography, styled} from '@mui/material'
 
 const responsive = {
     // superLargeDesktop: {
@@ -11,11 +11,11 @@ const responsive = {
     // },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 1
+      items: 5
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 1
+      items: 3
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -24,12 +24,17 @@ const responsive = {
   };
 
   const StyledBanner = styled('img')({
-    width: '100%'
+    width: '100%',
+    marginTop: '20px'
 })
 
-export const Banner = ({movie}) => {
+const Title = styled(Typography)`
+color: #FFFFFF
+`
+
+export const Slide = ({movie}) => {
+    console.log(movie);
   return (
-    <Box style={{ width: '65%' }}>
         <Carousel 
         responsive={responsive}
         swipeable={false}
@@ -43,10 +48,12 @@ export const Banner = ({movie}) => {
         >
             {
                 movie.map((ele)=>(
-                    <StyledBanner key={movie.id} src={`https://image.tmdb.org/t/p/original${ele.backdrop_path}`} />
+                    <>
+                    <StyledBanner key={ele.id} src={`https://image.tmdb.org/t/p/original${ele.backdrop_path}`} />
+                    <Title>{ele.original_title}</Title>
+                    </>
                 ))
             }
         </Carousel>
-    </Box>
   )
 }
