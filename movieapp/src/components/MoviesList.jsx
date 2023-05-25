@@ -1,5 +1,6 @@
 import { List, ListItem, Typography, styled } from '@mui/material'
 import React from 'react';
+import {Star} from '@mui/icons-material'
 
 const Banner = styled('img')({
     width: 47
@@ -19,6 +20,13 @@ export const MoviesList = ({movie}) => {
                     </ListItem>
                     <ListItem>
                         <Typography>{ele.original_title}</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Star color='warning'/>
+                        <Typography>{ele.vote_average}</Typography>
+                    </ListItem>
+                    <ListItem>
+                        <Typography>{ele.release_date}</Typography>
                     </ListItem>
                 </Container>
             ))

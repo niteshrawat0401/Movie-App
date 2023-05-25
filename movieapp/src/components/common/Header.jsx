@@ -4,6 +4,8 @@ import { logoURL } from '../../constants/constants'
 import {Menu, BookmarkAdd, ExpandMore } from '@mui/icons-material';
 import { Headersmenu } from './Headersmenu';
 import { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
+import { routhPath } from '../../constants/route';
 
 const StyleToolbar = styled(Toolbar)(`
     background : #121212;
@@ -41,6 +43,7 @@ const Inputsearch = styled(InputBase)`
 
 export const Header = () => {
 const [open, setOpen] = useState(null);
+const navigate = useNavigate() 
 
 const handleOpen = (e) =>{
     setOpen(e.currentTarget)
@@ -53,7 +56,7 @@ const handleClose = (e) =>{
   return (
         <AppBar position='static'>
                 <StyleToolbar>
-                    <Logo src={logoURL} alt="movielogo" />
+                    <Logo src={logoURL} alt="movielogo" onClick={()=> navigate(routhPath.home)}/>
                     <Box onClick={handleOpen}>
                         <Menu/>
                         <Typography>Menu</Typography>
