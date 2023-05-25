@@ -32,7 +32,7 @@ export const Upnext = ({ movie }) => {
     <Typography>Up next</Typography>
     {
         movie.splice(0, 3).map(movie => (
-            <Wrapper>
+            <Wrapper key={movie.id}>
                 <Poster src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="poster" />
                 <Typography>{movie.original_title}</Typography>
             </Wrapper>

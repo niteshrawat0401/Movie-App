@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import {Typography, styled} from '@mui/material'
+import {Box, Typography, styled} from '@mui/material'
 
 const responsive = {
     // superLargeDesktop: {
@@ -33,7 +33,7 @@ color: #FFFFFF
 `
 
 export const Slide = ({movie}) => {
-    console.log(movie);
+    // console.log(movie);
   return (
         <Carousel 
         responsive={responsive}
@@ -48,10 +48,10 @@ export const Slide = ({movie}) => {
         >
             {
                 movie.map((ele)=>(
-                    <>
-                    <StyledBanner key={ele.id} src={`https://image.tmdb.org/t/p/original${ele.backdrop_path}`} />
+                    <Box key={ele.id}>
+                    <StyledBanner  src={`https://image.tmdb.org/t/p/original${ele.backdrop_path}`} />
                     <Title>{ele.original_title}</Title>
-                    </>
+                    </Box>
                 ))
             }
         </Carousel>

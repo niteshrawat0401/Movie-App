@@ -14,7 +14,7 @@ export const MoviesList = ({movie}) => {
     <>
         {
             movie.map((ele)=>(
-                <Container>
+                <Container key={ele.id}>
                     <ListItem>
                         <Banner src={`https://image.tmdb.org/t/p/original/${ele.poster_path}`} alt='poster'/>
                     </ListItem>
