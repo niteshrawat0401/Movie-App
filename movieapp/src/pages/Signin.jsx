@@ -2,7 +2,7 @@ import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
 import { useContext } from 'react';
-import { AccountContext } from './AccountProvider';
+import { AccountContext } from '../context/AccountProvider';
 
 export const Signin = () => {
   const { setAccount } = useContext(AccountContext);
