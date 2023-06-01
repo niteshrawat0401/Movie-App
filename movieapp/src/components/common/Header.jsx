@@ -53,6 +53,8 @@ const handleClose = (e) =>{
     setOpen(null)
 }
 
+let auth = JSON.parse(localStorage.getItem('auth'))
+
   return (
         <AppBar position='static'>
                 <StyleToolbar>
@@ -68,7 +70,7 @@ const handleClose = (e) =>{
                         <BookmarkAdd/>
                         <Typography>Watchlist</Typography>
                     </Box>
-                    <Typography>Sign In</Typography>
+                    <Typography>{auth.name}</Typography>
                     <Typography>EN</Typography>
                     <ExpandMore/>
                 </StyleToolbar>

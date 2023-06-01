@@ -11,6 +11,7 @@ export const Signin = () => {
       let decoded = jwt_decode(res.credential);
       console.log(decoded);
       setAccount(decoded);
+      localStorage.setItem(('auth'),JSON.stringify(decoded))
       // setShowloginButton(false);
       // setShowlogoutButton(true);
       // await addUser(decoded);
@@ -20,7 +21,7 @@ export const Signin = () => {
     console.log('Login Failed:', res);
 };
   return (
-    <div>
+    <div style={{width: '16.1%'  ,margin: 'auto', marginTop: '15rem'}}>
       <GoogleLogin
   onSuccess={onLoginSuccess}
   onError={onLoginFailure}
